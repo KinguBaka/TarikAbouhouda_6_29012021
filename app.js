@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const stuffRoutes = require("./routes/stuff");
 const userRoutes = require("./routes/user");
 
-mongoose.connect('mongodb+srv://baka:bakabaka2@p6-openclassrooms.vhxyz.mongodb.net/p6-openclassrooms?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://baka:PFxxwZ0iim3grdDM@p6-openclassrooms.vhxyz.mongodb.net/p6-openclassrooms?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
