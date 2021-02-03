@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const logCtrl = require("../controllers/log");
+const userCtrl = require("../controllers/user");
 
 // POST Chiffre le mot de passe de l'utilisateur, ajoute l'utilisateur
-router.post("/signup", logCtrl.createUser);
+router.post("/signup", userCtrl.signup);
 
 // POST Vérifie les informations d'identification de l'utilisateur, en renvoyant l'identifiant
 // userID depuis la base de données et un jeton Web JSON signé (contenant également l'identifiant userID)
-router.post("/login", logCtrl.logUser);
+router.post("/login", userCtrl.login);
 
 module.exports = router;
