@@ -11,8 +11,7 @@ const stuffRoutes = require("./routes/stuff");
 const userRoutes = require("./routes/user");
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@p6-openclassrooms.vhxyz.mongodb.net/p6-openclassrooms?retryWrites=true&w=majority`,
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 

@@ -70,7 +70,7 @@ exports.likeOrDislike = (req, res, next) => {
             if (likeStatus === 0) {
                 const index = sauce.usersLiked.indexOf(userId);
                 if (index > -1) {
-                    sauce.usersLiked.slice(ind, 1);
+                    sauce.usersLiked.slice(index, 1);
                     Sauce.updateOne({  _id: req.params.id },
                         {$push: { usersLiked: {$each: [ ], $slice: index} }, $inc: { likes: -1 }})
                     .then(() => res.status(200).json({ message: "Like annulé !" }))
