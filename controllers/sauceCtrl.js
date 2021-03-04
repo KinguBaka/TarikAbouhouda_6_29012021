@@ -2,7 +2,7 @@
 const Sauce = require("../models/Sauce");
 const fs = require("fs");
 
-exports.createThing = (req, res, next) => {
+exports.createSauce = (req, res, next) => {
     const sauceObject = JSON.parse(req.body.sauce)
     delete sauceObject._id;    
     const sauce = new Sauce({
@@ -14,7 +14,7 @@ exports.createThing = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
-exports.modifyThing = (req, res, next) => {
+exports.modifySauce = (req, res, next) => {
     const sauceObject = req.file ?
     {
         ...JSON.parse(req.body.sauce),
@@ -25,7 +25,7 @@ exports.modifyThing = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
-exports.deleteThing = (req, res, next) => {
+exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({_id : req.params.id })
         .then( sauce => {
             const filename = sauce.imageUrl.split("/images/")[1];
@@ -38,13 +38,13 @@ exports.deleteThing = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
-exports.getAllThings = (req, res, next) => {
+exports.getAllSauces = (req, res, next) => {
     Sauce.find()
         .then(sauces => res.status(200).json( sauces ))
         .catch(error => res.status(400).json({ error }));
 };
 
-exports.getOneThing = (req, res, next) => {
+exports.getOneSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then(sauces => res.status(200).json( sauces ))
         .catch(error => res.status(404).json({ error }));

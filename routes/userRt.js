@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const userCtrl = require("../controllers/user");
+const userCtrl = require("../controllers/userCtrl");
 
 // POST Chiffre le mot de passe de l'utilisateur, ajoute l'utilisateur
 router.post("/signup", userCtrl.signup);

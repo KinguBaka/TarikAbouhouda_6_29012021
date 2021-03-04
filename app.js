@@ -7,8 +7,8 @@ const dotenv = require("dotenv")
 
 dotenv.config();
 
-const stuffRoutes = require("./routes/stuff");
-const userRoutes = require("./routes/user");
+const stuffRoutes = require("./routes/sauceRt");
+const userRoutes = require("./routes/userRt");
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@p6-openclassrooms.vhxyz.mongodb.net/p6-openclassrooms?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
